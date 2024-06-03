@@ -77,7 +77,7 @@ export default function MicrophoneComponent() {
 
   const sendTranscriptToBackend = async (text: string) => {
     try {
-      const response = await fetch('/api/convert_to_calendar', {
+      const response = await fetch('/api/conversation', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

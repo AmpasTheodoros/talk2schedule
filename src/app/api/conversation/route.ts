@@ -4,7 +4,7 @@ import OpenAIApi from "openai"
 
 const openai = new OpenAIApi({
     apiKey: "lm-studio",
-    baseURL: "http://localhost:1234/v1", 
+    baseURL: "http://localhost:5000/v1", 
 });
 
 const EXAMPLES = [
