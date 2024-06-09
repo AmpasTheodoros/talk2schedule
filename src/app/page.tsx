@@ -4,7 +4,7 @@ import { FlipWords } from "@/components/aceternity/flip-words";
 import Link from "next/link";
 
 const Home = () => {
-    const words = ["Sync", "Schedule", "Organise", "Add Tasks"];
+    const words = ["Cal", "Notion", "Slack", "Sync"];
 
     return (
         <main className="flex items-center justify-center flex-col">
@@ -12,7 +12,7 @@ const Home = () => {
             <section className="h-screen w-full bg-neutral-950 rounded-md !overflow-visible relative flex flex-col items-center antialiased">
                 <BackgroundGradientAnimation>
                     <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 text-3xl text-center md:text-4xl lg:text-7xl">
-                        Talk 2 <FlipWords words={words} />
+                        Vo<FlipWords words={words} />
                         <Link
                             href="/dashboard"
                             className="flex items-center justify-center bg-blue-400 hover:bg-blue-500 rounded-full w-20 h-20 focus:outline-none ml-4 pointer-events-auto"
