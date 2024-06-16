@@ -12,6 +12,7 @@ import { formSchema } from "./constants";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { v4 as uuidv4 } from "uuid";
+import OpenAI from "openai";
 
 const ConversationComponent = () => {
   const router = useRouter();
@@ -30,7 +31,8 @@ const ConversationComponent = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      const userMessage: OpenAI.Chat.CreateChatCompletionRequestMessage = { role: "user", content: values.prompt };
+      const currentDateTime = new Date().toISOString();
+      const userMessage: OpenAI.Chat.CreateChatCompletionRequestMessage = { role: "user", content: `Current date and time: ${currentDateTime}. Can you give me a quick summary of the task and the dates of this using bullet points? ${values.prompt}` };
       const newMessages = [...messages, userMessage];
       
       const response = await axios.post('/api/conversation', { messages: newMessages });
